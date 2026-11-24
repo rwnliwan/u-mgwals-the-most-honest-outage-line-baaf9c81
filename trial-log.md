@@ -22,10 +22,12 @@
 | Trial | Aksi | Hasil |
 |-------|------|-------|
 | T1 | Local run: `node main.ts` dengan ENTRY_OUTPUT ke /tmp | PASS — output persis teks C1, 128 karakter / 128 byte |
-| T2 | Bundle v1 + check | (diisi sesudah run) |
+| T2 | Bundle v1 + check | Bundle v1: 825.434 B, sha256 `26851847d69f2d0bfff74228390a80bbaba8a2f09a1928007e8f444f957c9fc8`. Check v1: **13 passed / 1 failed / 5 skipped / 5 at submission** — FAIL hanya `thinking_priced` (0 usage rows, ekspektasi builder; koordinator re-bundle sesudah run selesai). `thinking_revised` PASS (trial-log dari 2 messages), `thinking_reproduces` 96,8% (61/63 lines; main.ts 31 authored lines) |
+| T3 | Trial-log direvisi dengan hasil bundle/check v1 nyata → re-commit + push | (commit di bawah; koordinator re-bundle + re-check untuk usage rows) |
 
 ## Status
 
 - Build lokal: selesai (main.ts ditulis dengan file-write tool di sesi ini; README 3 live badge make.fun, 0 shields.io; `.makefun/owner.json` ada; LICENSE MIT).
 - Repo GitHub: (diisi — buat via `gh repo create`, periksa rate limit)
-- Bundle / check: (diisi)
+- Bundle / check: v1 13/1 (hanya thinking_priced gagal — 0 usage rows, ekspektasi; koordinator re-bundle). Trial-log direvisi dengan hasil nyata → commit baru di bawah.
+- HEAD sesudah revisi trial-log: (lihat commit berikut)
